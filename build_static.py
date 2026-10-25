@@ -24,9 +24,9 @@ def build_static():
     with open(os.path.join(base_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_static)
 
-    # Copy styles and scripts to public/static and public/
+    # Copy styles, scripts, manifest and service worker to public/static and public/
     static_src = os.path.join(base_dir, "static")
-    for fname in ["styles.css", "script.js"]:
+    for fname in ["styles.css", "script.js", "manifest.json", "sw.js"]:
         src = os.path.join(static_src, fname)
         if os.path.exists(src):
             shutil.copy2(src, os.path.join(public_dir, "static", fname))

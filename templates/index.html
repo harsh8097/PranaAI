@@ -8,13 +8,18 @@
       content="PranaScan AI Clinical Intelligence Platform. Precision medical document validation, laboratory report parameter extraction, grounded clinical AI interpretation, and non-invasive rPPG physiological telemetry."
     />
     <title>PranaScan AI | Clinical Diagnostics & Physiological Telemetry Platform</title>
-    <!-- Google Fonts: Plus Jakarta Sans, Outfit, JetBrains Mono -->
+    <!-- Google Fonts: Newsreader (Editorial Serif), Plus Jakarta Sans (Interface), Space Mono (Biometrics) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <meta name="theme-color" content="#16a34a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PranaScan AI" />
+    <link rel="manifest" href="static/manifest.json" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   </head>
   <body>
@@ -60,12 +65,11 @@
         <div class="hero-copy" id="about">
           <div class="clinical-pill-badge">
             <span class="pill-dot"></span>
-            <span>CLINICAL DECISION SUPPORT & VITAL TELEMETRY</span>
+            <span>CLINICAL DIAGNOSTIC INTELLIGENCE & TELEMETRY</span>
           </div>
-          <h1>PranaScan AI</h1>
-          <h2 class="hero-tagline">Clinical-Grade Medical Report Intelligence & Real-Time Physiological Telemetry</h2>
+          <h1>Precision Laboratory Extraction & <em>Contactless Telemetry</em></h1>
           <p class="hero-description">
-            Engineered for clinicians, researchers, and patients to instantly validate medical records, extract structured laboratory parameters across multi-column formats, and monitor contactless arterial pulse morphology with sub-pixel photoplethysmography (rPPG).
+            Engineered for clinicians, researchers, and patients to authenticate diagnostic panels, extract multi-column biomarkers across complex laboratory formats, and observe physiological pulse wave dynamics in real time.
           </p>
 
           <div class="hero-actions">
@@ -102,9 +106,9 @@
             <div class="hud-card-header">
               <div class="hud-lead-indicator">
                 <span class="hud-dot"></span>
-                <span>PATIENT HUD · PX-7704</span>
+                <span>TELEMETRY OBSERVATION · AMBULATORY LEAD</span>
               </div>
-              <span class="hud-pill-active">TELEMETRY LOCKED</span>
+              <span class="hud-pill-active">SIGNAL VERIFIED</span>
             </div>
 
             <!-- Patient Vitals Display -->
@@ -218,7 +222,7 @@
           <a class="tool-card" href="#document-upload">
             <div class="card-top-meta">
               <span class="tool-icon icon-teal" aria-hidden="true">🛡️</span>
-              <span class="module-code">MOD-01</span>
+              <span class="module-code">PHASE 01</span>
             </div>
             <span class="tool-card-title">Document Validation & Intake</span>
             <span class="tool-card-copy">Verify authenticity, font encoding, OCR readability, and medical relevance of diagnostic PDFs and imaging scans.</span>
@@ -227,7 +231,7 @@
           <a class="tool-card" href="#report-reader">
             <div class="card-top-meta">
               <span class="tool-icon icon-cyan" aria-hidden="true">📋</span>
-              <span class="module-code">MOD-02</span>
+              <span class="module-code">PHASE 02</span>
             </div>
             <span class="tool-card-title">Biochemical Lab Reader</span>
             <span class="tool-card-copy">Extract hematology, metabolic, and cardiac biomarkers with biological reference intervals and patient condition scoring.</span>
@@ -236,7 +240,7 @@
           <a class="tool-card" href="#assistant">
             <div class="card-top-meta">
               <span class="tool-icon icon-blue" aria-hidden="true">🩺</span>
-              <span class="module-code">MOD-03</span>
+              <span class="module-code">PHASE 03</span>
             </div>
             <span class="tool-card-title">Grounded Medical Assistant</span>
             <span class="tool-card-copy">Query an AI grounded strictly in the validated report findings to explain reference deviations and clinical context.</span>
@@ -245,7 +249,7 @@
           <a class="tool-card" href="#monitor">
             <div class="card-top-meta">
               <span class="tool-icon icon-rose" aria-hidden="true">💓</span>
-              <span class="module-code">MOD-04</span>
+              <span class="module-code">PHASE 04</span>
             </div>
             <span class="tool-card-title">Photoplethysmography Monitor</span>
             <span class="tool-card-copy">Contactless browser-based facial micro-vascular pulse wave telemetry and real-time hemodynamic classification.</span>
@@ -254,7 +258,7 @@
           <a class="tool-card" href="#video">
             <div class="card-top-meta">
               <span class="tool-icon icon-indigo" aria-hidden="true">🔬</span>
-              <span class="module-code">MOD-05</span>
+              <span class="module-code">PHASE 05</span>
             </div>
             <span class="tool-card-title">Video rPPG Analysis Engine</span>
             <span class="tool-card-copy">Perform post-hoc spectral FFT analysis on facial video recordings to estimate heart rate and pulse wave harmonics.</span>
@@ -273,8 +277,8 @@
         <div class="panel form-panel">
           <div class="panel-header">
             <div>
-              <span class="step-label">INTAKE MODULE 01 · VERIFICATION</span>
-              <h3>Upload Medical Document</h3>
+              <span class="step-label">PHASE 01 · DOCUMENT INTAKE</span>
+              <h3>Upload Medical Record</h3>
             </div>
             <div class="badge-group">
               <span class="badge success">PDF · PNG · JPG · JPEG</span>
@@ -326,7 +330,7 @@
           <div class="panel form-panel report-panel">
             <div class="panel-header">
               <div>
-                <span class="step-label">EXTRACTION MODULE 02 · LAB READER</span>
+                <span class="step-label">PHASE 02 · BIOCHEMICAL READER</span>
                 <h3>Extract Diagnostic Parameters</h3>
               </div>
               <span class="badge neutral" id="readerModuleBadge">Diagnostic PDF & Scans</span>
@@ -401,8 +405,8 @@
           <div class="panel form-panel assistant-panel">
             <div class="panel-header">
               <div>
-                <span class="step-label">ASSISTANT MODULE 03 · REPORT COPILOT</span>
-                <h3>Ask About Validated Report</h3>
+                <span class="step-label">PHASE 03 · CLINICAL CONSULTATION</span>
+                <h3>Inquire About Extracted Findings</h3>
               </div>
               <span class="badge success" id="assistantGroundedBadge">Report Grounded</span>
             </div>
@@ -437,8 +441,8 @@
           <div class="panel monitor-panel">
             <div class="panel-header">
               <div>
-                <span class="step-label">TELEMETRY MODULE 04 · ARTERIAL PLETHYSMOGRAPHY</span>
-                <h3>Real-Time Cardiac Cycle & Hemodynamic Monitor</h3>
+                <span class="step-label">PHASE 04 · HEMODYNAMIC TELEMETRY</span>
+                <h3>Contactless Arterial Pulse Monitor</h3>
               </div>
               <span class="badge warning">Sub-pixel rPPG · In-Browser</span>
             </div>
@@ -591,7 +595,7 @@
           <div class="panel form-panel">
             <div class="panel-header">
               <div>
-                <span class="step-label">VIDEO MODULE 05 · SPECTRAL ANALYSIS</span>
+                <span class="step-label">PHASE 05 · SPECTRAL VIDEO ANALYSIS</span>
                 <h3>Select Video for Signal Extraction</h3>
               </div>
               <span class="badge neutral">MP4 · MOV · AVI</span>
@@ -636,6 +640,30 @@
         <a class="back-top" href="#home">Back to top ↑</a>
       </div>
     </footer>
+
+    <!-- Mobile Floating Bottom Navigation Bar (Handheld Viewports) -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Clinical Navigation">
+      <a href="#home" class="mobile-nav-item active" data-target="home">
+        <span class="mobile-nav-icon">📊</span>
+        <span class="mobile-nav-label">Overview</span>
+      </a>
+      <a href="#document-upload" class="mobile-nav-item" data-target="document-upload">
+        <span class="mobile-nav-icon">📄</span>
+        <span class="mobile-nav-label">Intake</span>
+      </a>
+      <a href="#report-reader" class="mobile-nav-item" data-target="report-reader">
+        <span class="mobile-nav-icon">📋</span>
+        <span class="mobile-nav-label">Lab Reader</span>
+      </a>
+      <a href="#assistant" class="mobile-nav-item" data-target="assistant">
+        <span class="mobile-nav-icon">🩺</span>
+        <span class="mobile-nav-label">Copilot</span>
+      </a>
+      <a href="#monitor" class="mobile-nav-item" data-target="monitor">
+        <span class="mobile-nav-icon">💓</span>
+        <span class="mobile-nav-label">Telemetry</span>
+      </a>
+    </nav>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>

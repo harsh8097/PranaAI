@@ -1071,8 +1071,60 @@ function updateAssistantOutput(content, tone) {
   assistantOutput.innerHTML = `<h4>Assistant response</h4><p>${escapeHTML(content)}</p>`;
 }
 
-// Initialize activity navigation on DOM ready
+// Initialize activity navigation and mobile PWA on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   setupActivityNavigation();
+  setupMobileBottomNav();
 });
 setupActivityNavigation();
+setupMobileBottomNav();
+
+/* -------------------------------------------------------------
+   Mobile Bottom Navigation Active State Handler
+------------------------------------------------------------- */
+function setupMobileBottomNav() {
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+  if (!navItems.length) return;
+
+  navItems.forEach(item => {
+    item.addEventListener('click', function () {
+      navItems.forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Track active section on scroll
+  const sections = ['home', 'document-upload', 'report-reader', 'assistant', 'monitor'];
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 160;
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = document.getElementById(sections[i]);
+      if (sec && sec.offsetTop <= scrollPos) {
+        navItems.forEach(item => {
+          if (item.getAttribute('href') === '#' + sections[i]) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+        break;
+      }
+    }
+  }, { passive: true });
+}
+
+/* -------------------------------------------------------------
+   PWA Service Worker Registration (Offline Mobile Shell)
+------------------------------------------------------------- */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./static/sw.js')
+      .then(reg => {
+        console.log('PranaScan PWA Service Worker registered:', reg.scope);
+      })
+      .catch(err => {
+        console.log('PranaScan Service Worker registration bypassed:', err);
+      });
+  });
+}
+

@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify, render_template, request
+import os
+from flask import Blueprint, jsonify, render_template, request, send_from_directory
 
 from app.services.ai_assistant import MedicalAssistantService
 from app.services.document_validation import DocumentValidationService
@@ -15,6 +16,13 @@ video_service = VideoAnalysisService()
 @bp.route("/")
 def index():
     return render_template("index.html")
+
+
+@bp.route("/download-app")
+@bp.route("/prana_mobile_app.zip")
+def download_mobile_app():
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return send_from_directory(base_dir, "prana_mobile_app.zip", as_attachment=True)
 
 
 @bp.route("/api/validate-document", methods=["POST"])
