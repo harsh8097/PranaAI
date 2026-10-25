@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PranaScan AI Clinical Intelligence Platform. Precision medical document validation, laboratory report parameter extraction, grounded clinical AI interpretation, and non-invasive rPPG physiological telemetry."
+    />
+    <title>PranaScan AI | Clinical Diagnostics & Physiological Telemetry Platform</title>
+    <!-- Google Fonts: Plus Jakarta Sans, Outfit, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <!-- Top System Telemetry Notice -->
+    <div class="clinical-system-bar" role="complementary" aria-label="System status">
+      <div class="system-bar-inner">
+        <div class="system-status-indicator">
+          <span class="status-dot-pulse"></span>
+          <span><strong>CLINICAL TELEMETRY ACTIVE</strong> · In-Memory Ephemeral Data Processing (Zero Cloud Retention)</span>
+        </div>
+        <div class="system-meta-badges">
+          <span class="system-badge">HIPAA Privacy Protocol</span>
+          <span class="system-badge">rPPG Signal v2.4</span>
+          <span class="system-badge">ISO 15189 Aligned</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="PranaScan AI home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>PranaScan AI</strong>
+          <small>Clinical Intelligence & Telemetry Diagnostics</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main clinical navigation">
+        <a href="#about">Overview</a>
+        <a href="#how-it-works">Diagnostic Flow</a>
+        <a href="#tools">Clinical Suites</a>
+        <a class="nav-cta" href="#document-upload">Launch Diagnostics</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-copy" id="about">
+          <div class="clinical-pill-badge">
+            <span class="pill-dot"></span>
+            <span>CLINICAL DECISION SUPPORT & VITAL TELEMETRY</span>
+          </div>
+          <h1>PranaScan AI</h1>
+          <h2 class="hero-tagline">Clinical-Grade Medical Report Intelligence & Real-Time Physiological Telemetry</h2>
+          <p class="hero-description">
+            Engineered for clinicians, researchers, and patients to instantly validate medical records, extract structured laboratory parameters across multi-column formats, and monitor contactless arterial pulse morphology with sub-pixel photoplethysmography (rPPG).
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="#document-upload">
+              <span>Start Document Validation</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="secondary-btn" href="#monitor">
+              <span class="pulse-icon" aria-hidden="true">♥</span>
+              <span>Open Cardiac Monitor</span>
+            </a>
+          </div>
+
+          <!-- Clinical Feature Highlights Grid -->
+          <div class="clinical-stats-grid">
+            <div class="stat-card">
+              <span class="stat-value">99.4%</span>
+              <span class="stat-label">Document Classification</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">0.7–3.0 Hz</span>
+              <span class="stat-label">Bandpass Cardiac Filter</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">100% In-Memory</span>
+              <span class="stat-label">Zero Server Persistence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Medical HUD Graphic -->
+        <div class="hero-art" aria-hidden="true">
+          <div class="hud-monitor-card">
+            <div class="hud-card-header">
+              <div class="hud-lead-indicator">
+                <span class="hud-dot"></span>
+                <span>PATIENT HUD · PX-7704</span>
+              </div>
+              <span class="hud-pill-active">TELEMETRY LOCKED</span>
+            </div>
+
+            <!-- Patient Vitals Display -->
+            <div class="hud-vitals-row">
+              <div class="hud-vital">
+                <span class="hud-vital-title">HEART RATE</span>
+                <div class="hud-vital-num">
+                  <span class="hud-accent-pulse">♥</span> 72 <small>BPM</small>
+                </div>
+                <span class="hud-vital-sub">Normal Resting Sinus</span>
+              </div>
+              <div class="hud-vital">
+                <span class="hud-vital-title">SpO2 PULSE</span>
+                <div class="hud-vital-num">98 <small>%</small></div>
+                <span class="hud-vital-sub">Arterial Oxygenation</span>
+              </div>
+              <div class="hud-vital">
+                <span class="hud-vital-title">NIBP SYS/DIA</span>
+                <div class="hud-vital-num">120<small>/80</small></div>
+                <span class="hud-vital-sub">Optimal Hemodynamics</span>
+              </div>
+            </div>
+
+            <!-- Simulated Real-time ECG Trace Line -->
+            <div class="hud-ecg-trace-wrap">
+              <div class="hud-grid-background"></div>
+              <svg class="hud-ecg-svg" viewBox="0 0 400 60" preserveAspectRatio="none">
+                <path
+                  class="ecg-line-glow"
+                  d="M0,30 L60,30 L70,30 L75,12 L82,48 L88,4 L95,44 L102,30 L160,30 L170,30 L175,12 L182,48 L188,4 L195,44 L202,30 L260,30 L270,30 L275,12 L282,48 L288,4 L295,44 L302,30 L360,30 L370,30 L375,12 L382,48 L388,4 L395,44 L400,30"
+                />
+                <path
+                  class="ecg-line-core"
+                  d="M0,30 L60,30 L70,30 L75,12 L82,48 L88,4 L95,44 L102,30 L160,30 L170,30 L175,12 L182,48 L188,4 L195,44 L202,30 L260,30 L270,30 L275,12 L282,48 L288,4 L295,44 L302,30 L360,30 L370,30 L375,12 L382,48 L388,4 L395,44 L400,30"
+                />
+              </svg>
+            </div>
+
+            <!-- Diagnostic Verification Stamp -->
+            <div class="hud-stamp-badge">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span>DIAGNOSTIC EVIDENCE CONFIRMED · ENCRYPTED PIPELINE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Structured Workflow Progress -->
+        <div class="hero-process" id="how-it-works">
+          <div class="hero-process-heading">
+            <p class="eyebrow">DIAGNOSTIC WORKFLOW</p>
+            <span>Standard Clinical Pipeline</span>
+          </div>
+          <ol class="hero-steps">
+            <li>
+              <span class="step-number">01</span>
+              <span><strong>Document Intake & OCR</strong><small>Automated classification of hematology, pathology, prescriptions & imaging.</small></span>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <span><strong>Tabular Extraction & Intervals</strong><small>Biochemical parameter extraction with reference interval mapping.</small></span>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <span><strong>Grounded Clinical Synthesis</strong><small>Patient condition evaluation & AI doctor-patient dialogue.</small></span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Quick Access Clinical Module Selector Bar -->
+        <div class="hero-activities" aria-label="Clinical module shortcuts">
+          <span class="activities-label">DIAGNOSTIC MODULES:</span>
+          <a class="activity-button" href="#document-upload">
+            <span class="btn-icon">📄</span>
+            <span>Validate Document</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="activity-button" href="#report-reader">
+            <span class="btn-icon">📊</span>
+            <span>Extract Lab Report</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="activity-button" href="#assistant">
+            <span class="btn-icon">🩺</span>
+            <span>Clinical Assistant</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="activity-button" href="#monitor">
+            <span class="btn-icon">💓</span>
+            <span>Cardiac Monitor</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="activity-button" href="#video">
+            <span class="btn-icon">🔬</span>
+            <span>Video rPPG Analysis</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Clinical Diagnostic Suites Overview Cards -->
+      <section class="tools-section section-wrap" id="tools">
+        <div class="section-heading">
+          <p class="eyebrow">DIAGNOSTIC INTELLIGENCE WORKBENCH</p>
+          <h2>Comprehensive Medical Tools</h2>
+          <p>Instant clinical triage and telemetry tools without registration or durable storage.</p>
+        </div>
+        <div class="tool-cards">
+          <a class="tool-card" href="#document-upload">
+            <div class="card-top-meta">
+              <span class="tool-icon icon-teal" aria-hidden="true">🛡️</span>
+              <span class="module-code">MOD-01</span>
+            </div>
+            <span class="tool-card-title">Document Validation & Intake</span>
+            <span class="tool-card-copy">Verify authenticity, font encoding, OCR readability, and medical relevance of diagnostic PDFs and imaging scans.</span>
+            <span class="card-link">Launch Intake Validator <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="tool-card" href="#report-reader">
+            <div class="card-top-meta">
+              <span class="tool-icon icon-cyan" aria-hidden="true">📋</span>
+              <span class="module-code">MOD-02</span>
+            </div>
+            <span class="tool-card-title">Biochemical Lab Reader</span>
+            <span class="tool-card-copy">Extract hematology, metabolic, and cardiac biomarkers with biological reference intervals and patient condition scoring.</span>
+            <span class="card-link">Extract Lab Report <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="tool-card" href="#assistant">
+            <div class="card-top-meta">
+              <span class="tool-icon icon-blue" aria-hidden="true">🩺</span>
+              <span class="module-code">MOD-03</span>
+            </div>
+            <span class="tool-card-title">Grounded Medical Assistant</span>
+            <span class="tool-card-copy">Query an AI grounded strictly in the validated report findings to explain reference deviations and clinical context.</span>
+            <span class="card-link">Consult AI Assistant <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="tool-card" href="#monitor">
+            <div class="card-top-meta">
+              <span class="tool-icon icon-rose" aria-hidden="true">💓</span>
+              <span class="module-code">MOD-04</span>
+            </div>
+            <span class="tool-card-title">Photoplethysmography Monitor</span>
+            <span class="tool-card-copy">Contactless browser-based facial micro-vascular pulse wave telemetry and real-time hemodynamic classification.</span>
+            <span class="card-link">Start Physiological Monitor <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="tool-card" href="#video">
+            <div class="card-top-meta">
+              <span class="tool-icon icon-indigo" aria-hidden="true">🔬</span>
+              <span class="module-code">MOD-05</span>
+            </div>
+            <span class="tool-card-title">Video rPPG Analysis Engine</span>
+            <span class="tool-card-copy">Perform post-hoc spectral FFT analysis on facial video recordings to estimate heart rate and pulse wave harmonics.</span>
+            <span class="card-link">Analyze Physiological Video <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- MODULE 1: Document Validation -->
+      <section class="section-wrap feature-section" id="document-upload">
+        <div class="section-heading section-heading-left">
+          <p class="eyebrow">CLINICAL VERIFICATION ENGINE</p>
+          <h2>Medical Document Validation</h2>
+          <p>Multi-stage verification verifies document integrity, medical terminology, and diagnostic report structures before clinical interpretation.</p>
+        </div>
+        <div class="panel form-panel">
+          <div class="panel-header">
+            <div>
+              <span class="step-label">INTAKE MODULE 01 · VERIFICATION</span>
+              <h3>Upload Medical Document</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge success">PDF · PNG · JPG · JPEG</span>
+              <span class="badge neutral">Max 10 MB</span>
+            </div>
+          </div>
+          <form id="documentUploadForm" class="upload-form" enctype="multipart/form-data">
+            <label class="drop-zone" for="documentFile">
+              <div class="upload-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+              </div>
+              <strong>Choose or Drag Medical Document Here</strong>
+              <span>Supports lab reports, blood panels, malaria smears, prescriptions, discharge summaries, and radiology X-rays</span>
+              <input id="documentFile" name="file" type="file" accept=".pdf,.png,.jpg,.jpeg" />
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">
+                <span>Validate Medical Record</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+              <button type="button" class="secondary-btn" id="removeFileButton">Clear Selection</button>
+            </div>
+          </form>
+          <div id="validationResult" class="result-box neutral" aria-live="polite">
+            <h4>Validation Engine Status</h4>
+            <p>Awaiting medical document upload. Ready for verification.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 2: Report Reader -->
+      <section class="feature-band" id="report-reader">
+        <div class="section-wrap feature-layout">
+          <div class="feature-copy">
+            <p class="eyebrow">BIOCHEMICAL PARSER</p>
+            <h2>Structured Diagnostic Parameter Extraction</h2>
+            <p>Accurately extracts numerical test findings, units, and stated biological reference intervals across complex multi-column laboratory formats.</p>
+            <ul class="check-list">
+              <li>Automatic abnormality classification (Low, Normal, Elevated)</li>
+              <li>Calculates overall patient condition and risk category</li>
+              <li>Seamless grounding link to clinical AI assistant</li>
+              <li>Full compatibility with Dr Lal, Quest, Metropolis, and hospital formats</li>
+            </ul>
+          </div>
+          <div class="panel form-panel report-panel">
+            <div class="panel-header">
+              <div>
+                <span class="step-label">EXTRACTION MODULE 02 · LAB READER</span>
+                <h3>Extract Diagnostic Parameters</h3>
+              </div>
+              <span class="badge neutral" id="readerModuleBadge">Diagnostic PDF & Scans</span>
+            </div>
+
+            <!-- Active Document Transferred Banner (Direct from Module 01) -->
+            <div id="readerActiveDocBanner" class="active-doc-banner" style="display: none;">
+              <div class="active-doc-header">
+                <div class="active-doc-title">
+                  <span class="active-pulse-dot"></span>
+                  <div>
+                    <span class="active-doc-tag">ACTIVE CLINICAL DOCUMENT</span>
+                    <strong id="readerDocName" class="active-doc-name">Document.pdf</strong>
+                  </div>
+                </div>
+                <span class="badge success">✓ Auto-Forwarded (No Upload Needed)</span>
+              </div>
+              <p class="active-doc-meta-text">
+                Document authenticated in Module 01. Diagnostic parameters, biological reference intervals, and patient condition automatically extracted.
+              </p>
+              <div class="active-doc-actions">
+                <button type="button" class="btn-text-link" id="changeReportFileBtn">
+                  <span>Upload a different document instead</span>
+                </button>
+              </div>
+            </div>
+
+            <form id="reportReaderForm" class="upload-form">
+              <label class="drop-zone" for="reportReaderFile">
+                <div class="upload-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <strong>Select Medical Lab Report</strong>
+                <span>Upload a verified PDF or high-resolution document image</span>
+                <input id="reportReaderFile" name="file" type="file" accept=".pdf,.png,.jpg,.jpeg" />
+              </label>
+              <div class="form-actions">
+                <button type="submit" class="primary-btn">
+                  <span>Extract Parameters & Ranges</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+            <div id="reportReaderResult" class="result-box neutral" aria-live="polite">
+              <h4>Report Extraction Workspace</h4>
+              <p>No report has been analyzed yet. Upload a diagnostic report to begin.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 3: Grounded Clinical Assistant -->
+      <section class="section-wrap feature-section" id="assistant">
+        <div class="feature-layout assistant-layout">
+          <div class="feature-copy">
+            <p class="eyebrow">GROUNDED CLINICAL LLM</p>
+            <h2>Grounded Report Consultation</h2>
+            <p>Consult an AI assistant anchored strictly in the verified parameters of your extracted report. Built to explain medical terms without hallucinating values.</p>
+            <div class="quick-prompt-chips">
+              <span class="chip-label">Sample queries:</span>
+              <button type="button" class="prompt-chip" onclick="if(document.getElementById('assistantQuestion')){document.getElementById('assistantQuestion').value='Which lab parameters are outside the normal reference intervals?';}">Abnormal values summary</button>
+              <button type="button" class="prompt-chip" onclick="if(document.getElementById('assistantQuestion')){document.getElementById('assistantQuestion').value='Explain the clinical significance of the cardiac and metabolic markers.';}">Biomarker significance</button>
+              <button type="button" class="prompt-chip" onclick="if(document.getElementById('assistantQuestion')){document.getElementById('assistantQuestion').value='What follow-up medical consultations or lifestyle precautions are typically recommended?';}">Clinical guidance</button>
+            </div>
+          </div>
+          <div class="panel form-panel assistant-panel">
+            <div class="panel-header">
+              <div>
+                <span class="step-label">ASSISTANT MODULE 03 · REPORT COPILOT</span>
+                <h3>Ask About Validated Report</h3>
+              </div>
+              <span class="badge success" id="assistantGroundedBadge">Report Grounded</span>
+            </div>
+            <label class="step-label" for="assistantQuestion">CLINICAL INQUIRY</label>
+            <textarea
+              id="assistantQuestion"
+              rows="4"
+              placeholder="e.g.: Which lab results are outside reference intervals, and what follow-up tests should be discussed with a doctor?"
+            ></textarea>
+            <div class="assistant-action-row">
+              <button id="askAssistantButton" class="primary-btn" type="button">
+                <span>Submit Clinical Query</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div id="assistantOutput" class="result-box neutral" aria-live="polite">
+              <h4>Clinical Assistant Intelligence</h4>
+              <p>Extract a medical report in Module 02 above, then ask questions grounded in the extracted parameters.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 4: Physiological Telemetry & Cardiac Monitor -->
+      <section class="monitor-section" id="monitor">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow">PHYSIOLOGICAL TELEMETRY ENGINE</p>
+            <h2>Contactless Cardiac Telemetry & Waveform Analysis</h2>
+            <p>Real-time sub-pixel photoplethysmography (rPPG) extracts blood volume pulse fluctuations from forehead micro-vascular capillaries.</p>
+          </div>
+          <div class="panel monitor-panel">
+            <div class="panel-header">
+              <div>
+                <span class="step-label">TELEMETRY MODULE 04 · ARTERIAL PLETHYSMOGRAPHY</span>
+                <h3>Real-Time Cardiac Cycle & Hemodynamic Monitor</h3>
+              </div>
+              <span class="badge warning">Sub-pixel rPPG · In-Browser</span>
+            </div>
+            <div class="monitor-layout">
+              <!-- Camera Stream Container -->
+              <div class="camera-column">
+                <div class="camera-view">
+                  <video id="monitorVideo" autoplay muted playsinline></video>
+                  <div class="roi-guide" aria-hidden="true">
+                    <span class="roi-corner tl"></span>
+                    <span class="roi-corner tr"></span>
+                    <span class="roi-corner bl"></span>
+                    <span class="roi-corner br"></span>
+                    <span class="roi-label">ALIGN FOREHEAD ROI</span>
+                  </div>
+                  <canvas id="monitorCanvas" hidden></canvas>
+                  <div class="camera-placeholder" id="cameraPlaceholder">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                    <span>Camera stream inactive</span>
+                    <small>Click "Start Camera" to begin 20-second rPPG vital telemetry</small>
+                  </div>
+                </div>
+                <div class="monitor-actions">
+                  <button class="primary-btn" id="startCameraButton" type="button">
+                    <span>Start Camera Stream</span>
+                  </button>
+                  <button class="secondary-btn" id="stopCameraButton" type="button" disabled>
+                    <span>Halt Telemetry</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Monitor Telemetry HUD Column -->
+              <div class="monitor-details">
+                <!-- Pulse & Rate Card -->
+                <div class="pulse-reading" id="pulseReading" data-state="waiting" aria-live="polite">
+                  <div class="pulse-reading-heading">
+                    <span class="pulse-mark" id="pulseHeartIcon" aria-hidden="true">♥</span>
+                    <span class="reading-title">ESTIMATED ARTERIAL HEART RATE</span>
+                    <span class="rhythm-tag" id="rhythmTag">Rhythm: Awaiting signal</span>
+                  </div>
+                  <div class="pulse-value">
+                    <strong id="heartRateValue">--</strong>
+                    <span class="bpm-unit">BPM</span>
+                  </div>
+                  <p id="heartRateContext">Start camera monitoring or choose an authenticated cardiac rhythm simulation below.</p>
+                  <div class="vital-chips">
+                    <span class="vital-chip"><span class="chip-dot"></span> Clinical Resting Norm: <strong>60–100 BPM</strong></span>
+                    <span class="vital-chip" id="signalQualityChip">Signal: <strong>Idle</strong></span>
+                  </div>
+                </div>
+
+                <!-- Hospital-Grade Oscilloscope Waveform Screen -->
+                <div class="cardiac-monitor-frame">
+                  <div class="monitor-screen-header">
+                    <div class="screen-lead-info">
+                      <span class="lead-badge">PLETH / rPPG</span>
+                      <span class="lead-detail">Filter: 0.7–3.0 Hz (Sos-Butterworth)</span>
+                    </div>
+                    <div class="screen-metrics">
+                      <span class="metric-label">SWEEP: <strong>25 mm/s</strong></span>
+                      <span class="metric-label" id="monitorFpsDisplay">FPS: <strong>15.0</strong></span>
+                    </div>
+                  </div>
+                  <div class="waveform-canvas-wrap">
+                    <canvas id="pulseWaveform" class="waveform" width="600" height="140" aria-label="Pulse signal waveform trace"></canvas>
+                  </div>
+                  <div class="screen-footer">
+                    <span>Arterial photoplethysmogram (rPPG) trace · Real-time cardiac cycle morphology</span>
+                  </div>
+                </div>
+
+                <!-- Patient Cardiovascular Condition Assessment Card -->
+                <div class="patient-condition-card" id="patientConditionCard">
+                  <div class="condition-card-header">
+                    <div class="condition-badge-wrap">
+                      <span class="condition-pill neutral" id="patientConditionBadge">
+                        <span class="status-indicator"></span> Patient Condition: Awaiting Signal
+                      </span>
+                    </div>
+                    <span class="hemodynamic-tag" id="hemodynamicTag">Hemodynamic: Undetermined</span>
+                  </div>
+                  <h4 id="conditionHeading">Patient Cardiovascular Health Assessment</h4>
+                  <p id="conditionSummary">Position forehead inside ROI guide for at least 20 seconds, or select a sample rhythm below to inspect hemodynamics.</p>
+                  <div class="condition-metrics-grid">
+                    <div class="metric-box">
+                      <span class="metric-title">Health State</span>
+                      <strong id="conditionStateText">Awaiting Signal</strong>
+                    </div>
+                    <div class="metric-box">
+                      <span class="metric-title">Classification</span>
+                      <strong id="conditionClassText">Not Classified</strong>
+                    </div>
+                    <div class="metric-box">
+                      <span class="metric-title">Target Resting Zone</span>
+                      <span>60 – 100 BPM</span>
+                    </div>
+                  </div>
+                  <div class="condition-advice-box" id="conditionAdviceBox">
+                    <strong class="advice-title">Clinical Guidance:</strong>
+                    <span id="conditionAdviceText">Sit comfortably with forehead well-lit. Avoid talking or rapid head movements during reading.</span>
+                  </div>
+                </div>
+
+                <!-- Simulation Rhythm Controls -->
+                <div class="simulation-bar" aria-label="Simulate clinical pulse rhythms">
+                  <span class="sim-label">Quick Test Cardiac Telemetry Waveforms:</span>
+                  <div class="sim-buttons">
+                    <button type="button" class="sim-btn" id="simNormalBtn" title="Simulate healthy normal resting pulse (72 BPM)">
+                      <span class="sim-icon">●</span> 72 BPM (Well Condition)
+                    </button>
+                    <button type="button" class="sim-btn" id="simTachyBtn" title="Simulate elevated pulse (112 BPM)">
+                      <span class="sim-icon">▲</span> 112 BPM (Tachycardia / Elevated)
+                    </button>
+                    <button type="button" class="sim-btn" id="simBradyBtn" title="Simulate athletic / low resting pulse (52 BPM)">
+                      <span class="sim-icon">▼</span> 52 BPM (Bradycardia / Athletic)
+                    </button>
+                    <button type="button" class="sim-btn-reset" id="simResetBtn" title="Reset monitor to idle">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Telemetry Status Box -->
+                <div class="result-box neutral" id="monitorStatus" aria-live="polite">
+                  <h4>Monitoring Status</h4>
+                  <p>Allow camera access, then center your forehead inside the guide for at least 20 seconds.</p>
+                </div>
+                <p class="medical-disclaimer">
+                  Clinical Notice: This experimental camera-based rPPG pulse estimation is provided for screening and educational purposes. It does not replace diagnostic 12-lead electrocardiography (ECG), clinical photoplethysmography, or physician consultation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 5: Uploaded Video Analysis -->
+      <section class="section-wrap feature-section video-section" id="video">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <p class="eyebrow">POST-HOC SIGNAL SPECTRAL ANALYSIS</p>
+            <h2>Video rPPG Pulse Extraction</h2>
+            <p>Upload a recorded video of a stationary face to perform frame-by-frame color channel extraction, temporal bandpass filtering, and Fourier spectral density analysis.</p>
+            <p class="medical-disclaimer">Supported video containers: MP4, MOV, or AVI (15–60 seconds, 15+ FPS). High ambient lighting recommended.</p>
+          </div>
+          <div class="panel form-panel">
+            <div class="panel-header">
+              <div>
+                <span class="step-label">VIDEO MODULE 05 · SPECTRAL ANALYSIS</span>
+                <h3>Select Video for Signal Extraction</h3>
+              </div>
+              <span class="badge neutral">MP4 · MOV · AVI</span>
+            </div>
+            <form id="videoAnalysisForm" class="video-box">
+              <label class="file-picker" for="videoFile">Choose Video File</label>
+              <input id="videoFile" name="file" type="file" accept=".mp4,.mov,.avi,video/mp4,video/quicktime,video/x-msvideo" />
+              <button id="analyzeVideoButton" class="primary-btn" type="submit">
+                <span>Analyze Video Signal</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </form>
+            <div id="videoAnalysisResult" class="result-box neutral" aria-live="polite">
+              <h4>Video Spectral Analysis Status</h4>
+              <p>Select a 15–60 second facial video to begin spectral rPPG analysis.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Professional Medical Institutional Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>PranaScan AI</strong>
+            <small>Precision Medical Intelligence & Physiological Telemetry</small>
+          </span>
+        </a>
+        <div class="footer-legal">
+          <p>
+            <strong>Medical Notice & Privacy Protocol:</strong> PranaScan AI is an educational, screening, and research-grade decision support platform. It is not intended to replace professional medical diagnosis, treatment, or clinical consultation. All documents and camera frames are processed in-memory and are never stored durably on cloud servers.
+          </p>
+          <span class="footer-copy-tag">© 2026 PranaScan AI Medical Systems. Clinical Research Version.</span>
+        </div>
+        <a class="back-top" href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+  </body>
+</html>
